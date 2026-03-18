@@ -1,0 +1,579 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GiNOVA Science Academy</title>
+  <meta name="description" content="An independent research institution establishing the theoretical foundations for understanding food as biological control." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/core.css" />
+  <link rel="stylesheet" href="assets/css/components.css" />
+  <link rel="stylesheet" href="assets/css/layout.css" />
+  <link rel="stylesheet" href="assets/css/home.css" />
+</head>
+
+<body id="top">
+ <header class="site-header">
+  <div class="header-inner">
+
+    <a class="brand" href="#top">
+      <div class="brand-mark">
+        <img src="assets/img/ginova-crest.png" alt="" />
+      </div>
+      <div class="brand-type">
+        <span data-i18n="brand.l1">Anticipate</span><br />
+        <span data-i18n="brand.l2">Prepare</span><br />
+        <span data-i18n="brand.l3">Govern</span>
+      </div>
+    </a>
+
+    <nav class="nav" aria-label="Primary">
+      <a class="nav-link" href="" data-i18n="nav.model">Operating Model</a> ·
+      <a class="nav-link" href=""  data-i18n="nav.outcomes">Outcomes</a> ·
+      <a class="nav-link" href=""  data-i18n="nav.insights">Insights</a> ·
+      <a class="nav-link" href="" data-i18n="nav.standards">Standards</a> ·
+      <a class="nav-link" href=""    data-i18n="nav.about">About</a>
+    </nav>
+
+    <div class="lang-switch" role="group" aria-label="Language selection">
+      <button type="button" class="lang-btn" data-lang="de" aria-pressed="false">DEU</button>
+      <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">ENG</button>
+      <button type="button" class="lang-btn" data-lang="es" aria-pressed="false">ESP</button>
+      <button type="button" class="lang-btn" data-lang="it" aria-pressed="false">ITA</button>
+      <button type="button" class="lang-btn" data-lang="tr" aria-pressed="false">TUR</button>
+    </div>
+
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="hero-inner">
+      <div class="hero-wordmark">GiNOVA</div>
+      <p class="hero-tagline" data-i18n="hero.tagline">Operational Readiness for Critical Systems</p>
+
+      <div class="hero-challenge">
+        <p data-i18n="hero.body">Delivering operational decision support for ministries, agencies, and operators managing systemic risk across critical water, food, and supply networks.</p>
+        <p><span data-i18n="hero.sub1">Convert uncertainty into preparation pathways.</span></p>
+        <p><span data-i18n="hero.sub2">From diffuse risk to governable action.</span></p>
+      </div>
+
+      <div class="hero-actions">
+        <a href="" class="btn btn-primary" data-i18n="hero.cta.assess">Request Strategic Assessment</a>
+        <button type="button" class="btn btn-ghost" data-scroll-to="operating-model" data-i18n="hero.cta.model">See the Operating Model</button>
+      </div>
+    </div>
+  </section>
+
+
+    <!-- OPERATING MODEL TABS -->
+  <section class="section" id="doctrine">
+    <div class="container">
+      <div class="tabs">
+        <input type="radio" name="ginova-tab" id="tab-identity" />
+        <input type="radio" name="ginova-tab" id="tab-focus" checked />
+        <input type="radio" name="ginova-tab" id="tab-activity" />
+        <input type="radio" name="ginova-tab" id="tab-intent" />
+
+        <div class="tabs-hero">
+          <div class="hero-layer hero-identity"></div>
+          <div class="hero-layer hero-focus"></div>
+          <div class="hero-layer hero-activity"></div>
+          <div class="hero-layer hero-intent"></div>
+
+          <div class="tab-list" role="tablist" aria-label="GiNOVA tabs">
+            <label for="tab-focus"    role="tab" data-i18n="om.detect">Detect</label>
+            <label for="tab-identity" role="tab" data-i18n="om.understand">Understand</label>
+            <label for="tab-activity" role="tab" data-i18n="om.prepare">Prepare</label>
+            <label for="tab-intent"   role="tab" data-i18n="om.act">Act</label>
+          </div>
+        </div>
+
+        <!-- DETECT -->
+        <div class="tab-panel" id="panel02" role="tabpanel">
+          <h3 data-i18n="om.detect">Detect</h3>
+
+          <ul class="focus-list" role="list" aria-label="Detect items">
+            <li role="button" tabindex="0" data-focus-target="detect-1" aria-controls="detect-1" aria-expanded="false" data-i18n="detect.i1">Automated Horizon Scanning</li>
+            <li role="button" tabindex="0" data-focus-target="detect-2" aria-controls="detect-2" aria-expanded="false" data-i18n="detect.i2">Continuous monitoring of critical system signals</li>
+            <li role="button" tabindex="0" data-focus-target="detect-3" aria-controls="detect-3" aria-expanded="false" data-i18n="detect.i3">Early anomaly detection before compounding</li>
+            <li role="button" tabindex="0" data-focus-target="detect-4" aria-controls="detect-4" aria-expanded="false" data-i18n="detect.i4">Initial triage for relevance and exposure</li>
+          </ul>
+
+          <div class="switch" aria-live="polite">
+
+            <section class="tabMessage" id="detect-1" hidden data-i18n="detect.m1">
+              <p>Automated horizon scanning continuously monitors global data nodes across food, water, and supply systems.</p>
+              <p>The objective is early identification of anomalies that may compound into systemic pressure.</p>
+              <p>Signals are treated as indicators of exposure, not as headlines.</p>
+            </section>
+
+            <section class="tabMessage" id="detect-2" hidden data-i18n="detect.m2">
+              <p>Monitoring focuses on structural indicators that precede disruption: flow constraints, pricing pressure, routing shifts, and operational frictions.</p>
+              <p>Coverage is continuous; escalation is gated.</p>
+            </section>
+
+            <section class="tabMessage" id="detect-3" hidden data-i18n="detect.m3">
+              <p>Anomaly detection flags deviation from baseline patterns before downstream effects become visible.</p>
+              <p>This reduces interpretation delay and preserves maneuver time.</p>
+            </section>
+
+            <section class="tabMessage" id="detect-4" hidden data-i18n="detect.m4">
+              <p>Initial triage classifies signals by domain relevance, exposure pathways, and potential threshold proximity.</p>
+              <p>Only qualified signals proceed to modeling.</p>
+            </section>
+
+          </div>
+        </div>
+
+        <!-- UNDERSTAND -->
+        <div class="tab-panel" id="panel01" role="tabpanel">
+          <h3 data-i18n="om.understand">Understand</h3>
+          <ul class="focus-list" role="list">
+            <li role="button" tabindex="0" data-i18n="understand.i1">Computational Scenario Modeling</li>
+            <li role="button" tabindex="0" data-i18n="understand.i2">Cascading effects and exposure mapping</li>
+            <li role="button" tabindex="0" data-i18n="understand.i3">
+              <p class="doctrine-hero doctrine-hero-final" data-i18n="understand.hero">
+                Diffuse signals are translated into structured vulnerabilities and decision trade-offs.
+              </p>
+            </li>
+          </ul>
+        </div>
+
+        <!-- PREPARE -->
+        <div class="tab-panel" id="panel03" role="tabpanel">
+          <h3 data-i18n="om.prepare">Prepare</h3>
+          <ul role="list">
+            <li data-i18n="prepare.i1">Human-led strategic framing of operational pathways</li>
+            <li data-i18n="prepare.i2">Readiness design aligned to organizational constraints</li>
+            <li data-i18n="prepare.i3">Decision briefs produced under governance thresholds</li>
+          </ul>
+          <p class="note" data-i18n="prepare.note">Accountability is retained by human analysts; computation augments scale and detection.</p>
+        </div>
+
+        <!-- ACT -->
+        <div class="tab-panel" id="panel04" role="tabpanel">
+          <h3 data-i18n="om.act">Act</h3>
+          <ul role="list">
+            <li data-i18n="act.i1">Pre-agreed trigger thresholds and stabilization protocols</li>
+            <li data-i18n="act.i2">Controlled execution under defined governance boundaries</li>
+            <li data-i18n="act.i3">Rapid tactical briefs when thresholds are breached</li>
+          </ul>
+          <p class="note" data-i18n="act.note">Action is governed, documented, and aligned to the client's operational authority.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- TRUST STRIP -->
+<section id="trust" class="section trust-strip">
+    <div class="container">
+
+      <header class="section-header">
+        <p class="section-eyebrow" data-i18n="tr.eye">GiNOVA · Institutional Boundaries</p>
+        <h2 class="section-title"  data-i18n="tr.ttl">Institutional Operating Boundaries</h2>
+        <p class="section-lede"    data-i18n="tr.p">Engagement governed by defined methodological boundaries to ensure systemic integrity.</p>
+      </header>
+
+      <div class="domains-grid">
+
+        <article class="card">
+          <h3 data-i18n="tr.c1t">Evidence-Bound Method</h3>
+          <p  data-i18n="tr.c1b">Every strategic deliverable is constrained by documented methodology and governance thresholds to ensure all outputs are auditable and insulated from bias.</p>
+        </article>
+
+        <article class="card">
+          <h3 data-i18n="tr.c2t">Structured Intake Only</h3>
+          <p  data-i18n="tr.c2b">All engagement must clear a multi-gate Pipeline Intake process to ensure operational feasibility and strict adherence to stabilization protocols.</p>
+        </article>
+
+        <article class="card">
+          <h3 data-i18n="tr.c3t">Pure Strategic Neutrality</h3>
+          <p  data-i18n="tr.c3b">GiNOVA operates strictly outside the spheres of advocacy and lobbying to preserve the absolute neutrality required for high-stakes decision support.</p>
+        </article>
+
+        <article class="card">
+          <h3 data-i18n="tr.c4t">Deterministic Preparation</h3>
+          <p  data-i18n="tr.c4b">We reject "prediction theater" in favor of deterministic preparation pathways, ensuring readiness regardless of the specific crisis trigger.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- THRESHOLD MONITORING -->
+  <section id="paradigm" class="section">
+    <div class="container two-col">
+
+      <div class="media-card" style="margin:2em 0;padding:0;height:580px;width:480px;">
+        <figure style="margin:0;">
+          <div style="padding:1em;margin:5em auto -3em;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 600" preserveAspectRatio="xMidYMid meet" role="img"
+              aria-label="Minor background signals interfering with the intended signal; resultant transient event stays below threshold, with increased post-transient noise">
+              <rect class="bg" x="0" y="0" width="980" height="520" />
+
+              <line class="grid" x1="120" y1="396" x2="920" y2="396" />
+              <line class="grid" x1="120" y1="320" x2="920" y2="320" />
+              <line class="grid" x1="120" y1="244" x2="920" y2="244" />
+              <line class="grid" x1="120" y1="168" x2="920" y2="168" />
+              <line class="grid" x1="120" y1="92"  x2="920" y2="92" />
+
+              <line class="axis" x1="120" y1="50"  x2="120" y2="430" />
+              <line class="axis" x1="120" y1="430" x2="920" y2="430" />
+              <rect class="frame" x="120" y="50" width="800" height="380" />
+
+              <text class="lab" x="105" y="402" text-anchor="end"></text>
+              <text class="lab" x="105" y="326" text-anchor="end"></text>
+              <text class="lab" x="105" y="250" text-anchor="end"></text>
+              <text class="lab" x="105" y="174" text-anchor="end"></text>
+              <text class="lab" x="105" y="98"  text-anchor="end"></text>
+
+              <line class="tick" x1="120" y1="430" x2="120" y2="440" /><text class="lab" x="120" y="470" text-anchor="middle"></text>
+              <line class="tick" x1="287" y1="430" x2="287" y2="440" /><text class="lab" x="287" y="470" text-anchor="middle"></text>
+              <line class="tick" x1="453" y1="430" x2="453" y2="440" /><text class="lab" x="453" y="470" text-anchor="middle"></text>
+              <line class="tick" x1="620" y1="430" x2="620" y2="440" /><text class="lab" x="620" y="470" text-anchor="middle"></text>
+              <line class="tick" x1="787" y1="430" x2="787" y2="440" /><text class="lab" x="787" y="470" text-anchor="middle"></text>
+              <line class="tick" x1="920" y1="430" x2="920" y2="440" /><text class="lab" x="920" y="470" text-anchor="middle"></text>
+
+              <text class="lab" x="520" y="510" text-anchor="middle">Time (hours)</text>
+              <text class="lab" x="34"  y="240" text-anchor="middle" transform="rotate(-90 34 240)">SM (mg/dL)</text>
+
+              <line class="threshold" x1="120" y1="244" x2="920" y2="244" />
+              <text class="small" x="615" y="232" text-anchor="end" fill="#b91c1c">θ threshold</text>
+
+              <path class="baseline" d="M120,405 C210,392 300,418 390,404 C480,390 570,420 660,406 C750,394 840,416 920,408" />
+
+              <g>
+                <path class="minor" d="M120,408 C200,380 280,420 360,402 C440,384 520,424 600,404 C660,392 700,404 720,414 C760,430 820,410 920,420" />
+                <path class="minor" d="M120,398 C200,410 280,392 360,406 C440,420 520,398 600,412 C660,424 700,410 720,398 C760,380 820,420 920,404" />
+                <path class="minor" d="M120,412 C200,396 280,428 360,414 C440,396 520,430 600,418 C660,404 700,418 720,428 C760,420 820,438 920,430" />
+                <path class="minor" d="M120,402 C200,420 280,406 360,390 C440,402 520,388 600,404 C660,418 700,402 720,392 C760,410 820,396 920,414" />
+                <path class="minor" d="M120,418 C200,404 280,416 360,424 C440,412 520,420 600,426 C660,410 700,426 720,430 C760,416 820,432 920,418" />
+                <path class="minor" d="M120,392 C200,404 280,388 360,400 C440,388 520,406 600,394 C660,410 700,396 720,384 C760,402 820,388 920,396" />
+                <path class="minor" d="M120,410 C200,392 280,404 360,392 C440,406 520,392 600,406 C660,418 700,404 720,398 C760,420 820,408 920,424" />
+                <path class="minor" d="M120,404 C200,414 280,398 360,410 C440,396 520,412 600,400 C660,390 700,406 720,420 C760,438 820,420 920,440" />
+              </g>
+
+              <g>
+                <path class="minorPost" d="M720,410 C760,450 800,390 840,442 C870,472 895,410 920,458" />
+                <path class="minorPost" d="M720,396 C760,430 800,404 840,462 C870,438 895,474 920,432" />
+                <path class="minorPost" d="M720,424 C760,468 800,420 840,450 C870,486 895,438 920,476" />
+                <path class="minorPost" d="M720,386 C760,420 800,376 840,430 C870,414 895,452 920,408" />
+              </g>
+
+              <path class="intended"  d="M120,405 C520,405 600,398 655,352 C688,324 708,272 720,210 C732,146 742,100 748,92 C754,100 762,140 772,206 C784,286 800,338 826,366 C856,396 890,406 920,408" />
+              <path class="resultant" d="M120,408 C520,408 610,406 670,388 C695,380 712,360 726,332 C740,304 752,266 762,250 C772,236 784,230 796,232 C808,236 818,250 828,274 C840,304 850,340 860,370 C870,392 882,404 900,410 C910,412 916,412 920,412" />
+
+              <text class="small" x="158" y="116">Transient event signal (perfect conditions)</text>
+              <text class="small" x="158" y="140">Resultant (observed; handicapped + prolonged)</text>
+              <line x1="450" y1="112" x2="485" y2="112" class="intended" />
+              <line x1="450" y1="136" x2="485" y2="136" class="resultant" />
+
+              <text class="small" x="770" y="148" text-anchor="start" fill="#0b2545">intended peak (would cross θ)</text>
+              <text class="small" x="840" y="280" text-anchor="start" fill="#c9a227">resultant peak &lt; θ</text>
+              <text class="small" x="700" y="462" text-anchor="start">post-transient: higher noise amplitude</text>
+            </svg>
+          </div>
+
+          <img src="assets/img/cgm-chart.png" alt="CGM chart" loading="lazy" decoding="async"
+            style="display:block;width:90%;height:auto;margin:0 auto 5em;" />
+        </figure>
+      </div>
+
+      <div style="height:580px;text-align:justify;">
+        <h2 class="section-title" data-i18n="threshold.title">Systemic Threshold<br />Monitoring</h2>
+        <p data-i18n="threshold.p1">Conventional risk models treat systemic capacity as a fixed value. Complex infrastructure does not operate on fixed values—it operates on cascading signals. Under identical stress inputs, systemic resilience diverges.</p>
+        <p data-i18n="threshold.p2">Conventional models discard this variance as noise. In operational risk, it encodes state: latency, supply phase, infrastructural friction, and cascading exposure.</p>
+        <ul style="padding:2em;line-height:2em;">
+          <li data-i18n="threshold.q1">Static risk modeling asks: <strong>What is the current capacity?</strong></li>
+          <li data-i18n="threshold.q2">Signal-based intelligence asks, instead: <strong>How is the stress compounding?</strong></li>
+        </ul>
+        <p data-i18n="threshold.p3">A system can fail even if physical supply appears stable.</p>
+        <div class="hero-wordmark" style="width:100%;margin:.1em auto;text-align:center;"></div>
+        <p data-i18n="threshold.card">GiNOVA engineers operational frameworks for systemic continuity—governing pressure states, response timing, and infrastructural persistence.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- OUTCOMES -->
+  <section id="outcomes" class="section section-soft">
+    <div class="container two-col">
+
+      <div class="content">
+        <p class="section-kicker" data-i18n="out.eyebrow">THE DELIVERABLES</p>
+        <h2 class="section-title" data-i18n="out.title">Converting Exposure into Posture</h2>
+        <p data-i18n="out.body">We terminate uncertainty by delivering exact continuity protocols across three structural time horizons: Near-Term, Mid-Horizon, and Structural. Our deliverables are engineered for executive usability, stripping away academic bloat to provide immediate operational clarity.</p>
+        <ul style="padding:2em;line-height:2em;">
+          <li data-i18n="out.continuity"><strong>Continuity Assurance:</strong> Transition from diffuse drought and contamination risks to governable security protocols.</li>
+          <li data-i18n="out.supply"><strong>Supply Integrity:</strong> Transition from latent supply chain fragility to secured, stress-tested distribution pathways.</li>
+          <li data-i18n="out.human"><strong>Human Readiness:</strong> Transition from complex exposure to actionable human capital protection and readiness.</li>
+        </ul>
+        <a class="btn btn-primary" href="" data-i18n="out.cta">View Sample Briefs</a>
+      </div>
+
+      <div class="media-card">
+        <img src="assets/img/outcomes-blueprint.jpg" loading="lazy" decoding="async"
+          alt="Architectural blueprint illustrating structural continuity for water, agri-security, and human systems." />
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PREPARE -->
+  <section id="prepare" class="section section-education">
+    <div class="container">
+
+      <header class="section-header">
+        <p class="section-eyebrow" data-i18n="prep.eyebrow">GINOVA · PREPARE</p>
+        <h2 class="section-title"  data-i18n="prep.title">Executive Readiness &amp; Operational Pathways</h2>
+        <p class="section-lede"    data-i18n="prep.lede">Strategic programs that translate systemic risk and threshold monitoring into decision-grade literacy and institutional capability.</p>
+      </header>
+
+      <div class="edu-band" aria-label="Readiness framing">
+        <div class="band-item">
+          <div class="band-k" data-i18n="prep.band.formats.label">Formats</div>
+          <div class="band-v" data-i18n="prep.band.formats.value">Strategic Briefings · Private Consultations · Readiness Workshops</div>
+        </div>
+        <div class="band-item">
+          <div class="band-k" data-i18n="prep.band.audience.label">Audience</div>
+          <div class="band-v" data-i18n="prep.band.audience.value">Ministries · Critical Agencies · Enterprise Operations</div>
+        </div>
+        <div class="band-item">
+          <div class="band-k" data-i18n="prep.band.method.label">Method</div>
+          <div class="band-v" data-i18n="prep.band.method.value">Signal-first · Boundary-aware · Decision-linked</div>
+        </div>
+      </div>
+
+      <div class="edu-grid" role="list" aria-label="Readiness lanes">
+
+        <article class="edu-card edu-card-primary" role="listitem">
+          <div class="edu-kicker" data-i18n="prep.laneA.eyebrow">Lane A · Executive Readiness</div>
+          <h3 data-i18n="prep.laneA.title">Institutional Briefings &amp; Readiness Modules</h3>
+          <p  data-i18n="prep.laneA.body">High-density modules for leadership teams covering systemic control architectures, population resilience, and operational posture under constraint.</p>
+          <ul class="edu-list">
+            <li data-i18n="prep.laneA.i1">Systemic Readiness: from vulnerability to control</li>
+            <li data-i18n="prep.laneA.i2">Stability states, timing, and threshold logic</li>
+            <li data-i18n="prep.laneA.i3">Risk posture: chokepoints, coupling, and continuity</li>
+          </ul>
+          <div class="edu-actions">
+            <a class="edu-link" href="" data-i18n="prep.laneA.cta">Request a briefing outline &rarr;</a>
+          </div>
+        </article>
+
+        <article class="edu-card" role="listitem">
+          <div class="edu-kicker" data-i18n="prep.laneB.eyebrow">Lane B · Operational Pathways</div>
+          <h3 data-i18n="prep.laneB.title">Applied Continuity Workshops &amp; Stress Labs</h3>
+          <p  data-i18n="prep.laneB.body">Advanced workshops that operationalize systemic signal integrity, timing, and state-dependent response through applied protocol design.</p>
+          <ul class="edu-list">
+            <li data-i18n="prep.laneB.i1">Scenario labs: signal integrity in supply matrices</li>
+            <li data-i18n="prep.laneB.i2">Protocol labs: timing windows, thresholds, and feedback</li>
+            <li data-i18n="prep.laneB.i3">Measurement linkage: practical markers and evaluation</li>
+          </ul>
+          <div class="edu-actions">
+            <a class="edu-link" href="" data-i18n="prep.laneB.cta">View workshop formats &rarr;</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <div class="container contact-grid">
+
+      <div class="content">
+        <h2 class="section-title" data-i18n="contact.title">Inquiry</h2>
+        <p data-i18n="contact.body">For institutional partnerships and invited strategic briefings—reach out with a decision brief and your preferred timeline.</p>
+        <div class="contact-info">
+          <div class="info-card">
+            <p class="info-label" data-i18n="contact.email.label">EMAIL</p>
+            <p class="info-value">info@ginova.org</p>
+          </div>
+          <div class="info-card">
+            <p class="info-label" data-i18n="contact.scope.label">SCOPE</p>
+            <p class="info-value" data-i18n="contact.scope.value">Anticipate · Prepare · Govern</p>
+          </div>
+        </div>
+      </div>
+
+      <form class="contact-form" action="#" method="post">
+        <div class="form-group">
+          <label class="form-label" for="name"    data-i18n="contact.form.name">NAME</label>
+          <input class="form-input" type="text"   id="name"    name="name"    required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="email"   data-i18n="contact.form.email">EMAIL</label>
+          <input class="form-input" type="email"  id="email"   name="email"   required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="message" data-i18n="contact.form.message">MESSAGE</label>
+          <textarea class="form-textarea"         id="message" name="message" required></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit" data-i18n="contact.form.send">Send</button>
+        <p class="form-note" data-i18n="contact.form.note">We usually respond within two business days.</p>
+      </form>
+
+    </div>
+  </section>
+
+</main>
+
+
+  <footer class="site-footer-dark">
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-col brand-col">
+          <div class="brand-header">
+            <img src="assets/img/ginova-seal.jpg" alt="GiNOVA Crest" class="footer-crest" />
+            <div class="brand-text">
+              <span class="brand-name">GiNOVA</span>
+              <span class="brand-tagline" data-i18n="brand.l1">Anticipate</span>
+              <span class="brand-tagline" data-i18n="brand.l2">Prepare</span>
+              <span class="brand-tagline" data-i18n="brand.l3">Govern</span>
+            </div>
+          </div>
+          <div class="social-pills">
+            <a href="#" class="social-pill">LinkedIn</a>
+            <a href="#" class="social-pill">YouTube</a>
+            <a href="#" class="social-pill">X</a>
+          </div>
+        </div>
+        <nav class="footer-col nav-col">
+          <a href="" data-i18n="nav.model">Operating Model</a>
+          <a href="" data-i18n="nav.outcomes">Outcomes</a>
+          <a href="" data-i18n="nav.insights">Insights</a>
+          <a href="" data-i18n="nav.standards">Standards</a>
+          <a href="" data-i18n="nav.about">About</a>
+        </nav>
+        <div class="footer-col location-col">
+          <a href="" class="action-link" data-i18n="hero.cta.assess">Request Strategic Assessment</a>
+          <div class="address-block">
+            <span class="address-title">GiNOVA</span>
+            <address>
+              Bağlıca, 1083. Sk. No:7/A<br>
+              06930 Etimesgut / Ankara<br>
+              Türkiye
+            </address>
+          </div>
+        </div>
+      </div>
+      <div class="footer-mid">
+        <div class="newsletter-info">
+          <span class="eyebrow">INTELLIGENCE BRIEFINGS</span>
+          <p data-i18n="footer.newsletter.body">Periodic notes on systemic risk, operational readiness, and threshold monitoring. No noise.</p>
+        </div>
+        <form class="newsletter-form" action="#" method="post">
+          <input type="email" name="email" placeholder="Email" required />
+          <button type="submit" data-i18n="footer.newsletter.cta">Subscribe</button>
+        </form>
+      </div>
+      <div class="footer-bottom">
+        <div class="legal-links">
+          © 2026 GiNOVA · 
+          <a href="" data-i18n="nav.standards">Standards</a> · 
+          <a href="" data-i18n="footer.legal.disclosures">Funding Disclosures</a> · 
+          <a href="" data-i18n="footer.legal.privacy">Privacy</a>
+        </div>
+        <p style="position:absolute; bottom:1.5em; font-size: 0.8rem; color: #6b7280;">designed by GiNOVA Labs</p>
+        <a href="#top" class="to-top-pill">Back to top</a>
+      </div>
+    </div>
+    <div class="footer-accent-line"></div>
+  </footer>
+  
+  
+  <script src="assets/js/i18n.js"></script>
+  <script src="i18n/index.i18n.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    (() => {
+      const panel = document.querySelector("#panel02");
+      if (!panel) return;
+
+      const items = panel.querySelectorAll(".focus-list li[data-focus-target]");
+      const sections = panel.querySelectorAll(".switch .tabMessage");
+      const hero = document.querySelector(".tabs-hero .hero-focus");
+
+      const hideAll = () => {
+        sections.forEach(sec => (sec.hidden = true));
+        items.forEach(li => {
+          li.classList.remove("is-active");
+          li.setAttribute("aria-expanded", "false");
+        });
+        panel.classList.remove("has-selection");
+        hero?.classList.remove("notes-open");
+        if (panel.contains(document.activeElement)) document.activeElement.blur();
+      };
+
+      const show = (targetId) => {
+        sections.forEach(sec => (sec.hidden = sec.id !== targetId));
+        items.forEach(li => {
+          const active = li.dataset.focusTarget === targetId;
+          li.classList.toggle("is-active", active);
+          li.setAttribute("aria-expanded", active ? "true" : "false");
+        });
+        panel.classList.add("has-selection");
+        hero?.classList.add("notes-open");
+      };
+
+      const toggle = (targetId) => {
+        const active = panel.querySelector('.focus-list li.is-active[data-focus-target]');
+        if (panel.classList.contains("has-selection") && active?.dataset.focusTarget === targetId) {
+          hideAll();
+          return;
+        }
+        show(targetId);
+      };
+
+      panel.addEventListener("click", (e) => {
+        const li = e.target.closest(".focus-list li[data-focus-target]");
+        if (!li) return;
+        toggle(li.dataset.focusTarget);
+      });
+
+      panel.addEventListener("keydown", (e) => {
+        const li = e.target.closest(".focus-list li[data-focus-target]");
+        if (!li) return;
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          toggle(li.dataset.focusTarget);
+        }
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!panel.classList.contains("has-selection")) return;
+        if (panel.contains(e.target)) return;
+        hideAll();
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key !== "Escape") return;
+        if (!panel.classList.contains("has-selection")) return;
+        hideAll();
+      });
+
+      document.addEventListener("click", (e) => {
+        const btn = e.target.closest("[data-scroll-to]");
+        if (!btn) return;
+        const id = btn.getAttribute("data-scroll-to");
+        const el = id ? document.getElementById(id) : null;
+        if (!el) return;
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    })();
+  </script>
+</body>
+</html>
