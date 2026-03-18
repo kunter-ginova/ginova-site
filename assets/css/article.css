@@ -1,0 +1,192 @@
+/* ============================================
+   GiNOVA — Manifesto / Article Page Styles
+   Long-form content layout
+   ============================================ */
+
+/* ---------- Article Header ---------- */
+.article-header {
+  margin-top: var(--header-h);
+  padding: 80px 0 48px;
+  text-align: center;
+  border-bottom: 1px solid var(--c-line);
+}
+
+.article-badge {
+  display: inline-block;
+  padding: 6px 14px;
+  margin-bottom: 20px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--c-bg);
+  background: var(--c-ink);
+  border-radius: 999px;
+}
+
+.article-kicker {
+  margin: 0 0 16px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+}
+
+.article-title {
+  max-width: 720px;
+  margin: 0 auto 12px;
+  font-family: var(--f-serif);
+  font-size: clamp(28px, 5vw, 42px);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.article-subtitle {
+  max-width: 600px;
+  margin: 0 auto 24px;
+  font-size: 16px;
+  font-style: italic;
+  color: var(--c-muted);
+  line-height: 1.5;
+}
+
+.article-author {
+  margin-bottom: 8px;
+}
+
+.article-author-name {
+  font-weight: 700;
+  color: var(--c-ink);
+}
+
+.article-author-affil {
+  font-size: 13px;
+  color: var(--c-muted);
+  line-height: 1.5;
+}
+
+.article-meta {
+  font-size: 12px;
+  color: var(--c-muted);
+}
+
+/* ---------- Epigraph ---------- */
+.article-epigraph {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 32px 24px;
+  text-align: center;
+  border-top: 1px solid var(--c-line);
+}
+
+.article-epigraph blockquote {
+  margin: 0 0 8px;
+  font-family: var(--f-serif);
+  font-size: 18px;
+  font-style: italic;
+  line-height: 1.6;
+  color: var(--c-ink);
+}
+
+.article-epigraph cite {
+  font-size: 12px;
+  font-style: normal;
+  color: var(--c-muted);
+}
+
+/* ---------- Article Body ---------- */
+.article-body {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+.article-body p {
+  margin-bottom: 1.6em;
+  font-size: 17px;
+  line-height: 1.85;
+  color: var(--c-ink);
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
+
+.article-body p.break {
+  margin: 3em 0;
+  height: 0;
+}
+
+.article-body p:last-child {
+  margin-bottom: 0;
+}
+
+.article-body strong {
+  font-weight: 700;
+}
+
+.article-body em {
+  font-style: italic;
+}
+
+/* ---------- Article References ---------- */
+.article-refs {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 24px 80px;
+  border-top: 1px solid var(--c-line);
+  padding-top: 32px;
+}
+
+.article-refs h3 {
+  margin: 0 0 16px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+}
+
+.article-refs ol {
+  margin: 0;
+  padding-left: 20px;
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--c-muted);
+}
+
+.article-refs li {
+  margin-bottom: 8px;
+}
+
+.article-refs em {
+  font-style: italic;
+}
+
+/* ---------- Print Styles ---------- */
+@media print {
+  .site-header,
+  .site-footer,
+  .lang-switch,
+  .to-top {
+    display: none !important;
+  }
+
+  .article-header {
+    margin-top: 0;
+    padding-top: 32px;
+  }
+
+  .article-body p {
+    font-size: 11pt;
+    line-height: 1.7;
+    orphans: 3;
+    widows: 3;
+  }
+
+  .article-refs {
+    page-break-before: always;
+  }
+}

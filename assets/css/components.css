@@ -1,0 +1,316 @@
+/* =========================
+   GiNOVA — Components (compacted)
+   ========================= */
+
+/* ---------- Buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:12px 24px;font-size:14px;font-weight:700;letter-spacing:.01em;
+  border-radius:999px;border:1px solid transparent;
+  transition:transform var(--dur-fast) var(--ease),box-shadow var(--dur-fast) var(--ease),background var(--dur-fast) var(--ease);
+}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary,.btn-ghost{margin:1em;}
+.btn-primary{background:var(--c-ink);color:var(--c-bg);box-shadow:var(--shadow-md)}
+.btn-primary:hover{box-shadow:var(--shadow-lg)}
+.btn-ghost{background:var(--c-soft);border-color:var(--c-line);color:var(--c-ink);border-width:3px;}
+.btn-ghost:hover{background:var(--c-soft)}
+.btn-sm{padding:10px 16px;font-size:12px}
+
+/* ---------- Cards / Shared “surface” ---------- */
+:where(.card,.info-card,.contact-form){
+  background:var(--c-bg);
+  border:1px solid var(--c-line);
+}
+
+.domains-grid .card {width:100%;background-color:#fafafa;}
+
+.card{
+  padding:24px;border-radius:20px;box-shadow:var(--shadow-sm);
+  transition:transform var(--dur-fast) var(--ease),box-shadow var(--dur-fast) var(--ease);
+}
+.card:hover{transform:translateY(-2px);box-shadow:var(--shadow-md)}
+.card h3{margin:0 0 10px;font-size:17px;font-weight:700;letter-spacing:-.01em}
+.card p{margin:0;font-size:14px;line-height:1.65;color:var(--c-muted)}
+
+
+.largeMedia-card{
+  display:block;height:100%;min-height:300px;width:1120px;border-radius:20px;border:1px solid var(--c-line);overflow:hidden;
+  box-shadow:var(--shadow-md);background:#fff;
+  align-items:center;justify-content:center;color:var(--c-muted);font-size:14px;
+}
+
+.largeMedia-inside{
+  padding:0 6em 3em; text-align:justify;
+}
+
+.media-card{
+  border-radius:20px;border:1px solid var(--c-line);overflow:hidden;
+  box-shadow:var(--shadow-md);background:#fff;aspect-ratio:4/3;
+  display:flex;align-items:center;justify-content:center;color:var(--c-muted);font-size:14px;
+}
+
+/* ---------- Info Cards ---------- */
+.info-card{padding:16px;border-radius:14px}
+:where(.info-label,.form-label){
+  font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--c-muted);
+}
+.info-label{margin-bottom:6px}
+.info-value{font-weight:600;color:var(--c-ink)}
+
+/* ---------- Forms ---------- */
+.form-group{margin-bottom:16px}
+.form-label{display:block;margin-bottom:6px;font-size:11px;letter-spacing:.10em}
+:where(.form-input,.form-textarea){
+  width:100%;padding:12px 14px;font-size:15px;
+  border:1px solid var(--c-line);border-radius:10px;
+  background:var(--c-soft);
+  transition:border-color var(--dur-fast) var(--ease);
+}
+:where(.form-input,.form-textarea):focus{outline:none;border-color:var(--c-ink)}
+.form-textarea{min-height:120px;resize:vertical}
+.contact-form{padding:24px;border-radius:20px;box-shadow:var(--shadow-md)}
+
+/* ---------- Newsletter ---------- */
+.newsletter{display:flex;gap:8px;margin-bottom:12px}
+.newsletter input{
+  flex:1;padding:10px 12px;font-size:14px;
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);
+  border-radius:10px;color:var(--c-bg);
+}
+.newsletter input::placeholder{color:rgba(255,255,255,.45)}
+@media (max-width:560px){.newsletter{flex-direction:column}}
+
+
+/* =========================
+   TABS (pure CSS radio-driven) — single source of truth
+   ========================= */
+
+.tabs{
+  margin-top:24px;
+  --radius:20px;
+  --border:#e7e7e7;
+  --ink:#111827;
+  --muted:#6b7280;
+  --tabbar-h:64px;
+  --hero-h:clamp(240px,34vw,410px);
+  border:0px solid var(--border);
+  border-radius:var(--radius);
+  overflow:hidden;
+  box-shadow:0 12px 32px rgba(0,0,0,.06);
+}
+
+/* state holders */
+.tabs input[type="radio"]{position:absolute;opacity:0;pointer-events:none}
+
+/* hero */
+.tabs-hero{
+  position:relative;
+  height:var(--hero-h);
+  background:var(--c-bg);
+  border-bottom:1px solid orangered; 
+  border-radius:var(--radius);
+}
+
+.tabs-hero .hero-layer{
+  position:absolute;inset:0;
+  background-size:cover; 
+  background-position:center;
+  opacity:0;transform:scale(1.02);
+  transition:opacity .28s ease;
+  margin-bottom:20px;
+}
+
+/* old images 
+.tabs-hero .hero-focus    { background:white url("../img/Food-is-medicine.png") center -25px/cover no-repeat }
+.tabs-hero .hero-identity { background:white url("../img/Metabolic-engineering.png") center -135px/cover no-repeat }
+.tabs-hero .hero-activity { background:white url("../img/Activities.png") top/cover no-repeat }
+.tabs-hero .hero-intent   { background:white url("../img/biomiks-green.png") left -150px }
+*/
+.tabs-hero .hero-focus    { background:white url("../img/tabBg001.png") center  -75px/cover no-repeat }
+.tabs-hero .hero-identity { background:white url("../img/tabBg002.png") center  -60px/cover no-repeat }
+.tabs-hero .hero-activity { background:white url("../img/tabBg003.png") right  -115px/cover no-repeat }
+.tabs-hero .hero-intent   { background:white url("../img/tabBg004.png") left    -75px/cover no-repeat }
+
+.tabs-hero .hero-focus.notes-open,
+.tabs-hero .hero-identity.notes-open,
+.tabs-hero .hero-activity.notes-open,
+.tabs-hero .hero-intent.notes-open {
+  background-image: none !important;
+  background: white !important;   /* optional: keeps a clean base */
+}
+
+/* force hidden to actually hide */
+[hidden]{ display:none !important; }
+
+/* suppress hero image while notes are open */
+.tabs-hero .hero-focus.notes-open{
+  background-image:none !important;
+  background-color:#fff !important;
+}
+
+.focus-list li[tabindex="0"] {
+  outline: none;
+}
+
+.focus-list li { color:magenta; }
+
+.focus-list li[tabindex="0"]:focus-visible {
+  outline: 2px solid rgba(0,0,0,0.35);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+
+/* fade tail (prevents image seam under the bar) */
+.tabs-hero::after{
+  content:"";
+  position:absolute;
+  left:0;right:0;bottom:-4px;
+  height:72px;
+  pointer-events:none;
+}
+
+/* tab bar */
+.tab-list{
+  position:absolute;left:0;right:0;bottom:0;
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+  height:var(--tabbar-h);
+  background:linear-gradient(to bottom,rgba(255,255,255,.88),#fff);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+}
+
+/* panels */
+.tab-panel  {display:none;position:relative;padding:4em 28px 30px; }
+.tab-panel h3{margin:-40px 0 14px 14px;font-size:clamp(20px,2vw,26px);letter-spacing:-.02em;color:var(--ink)}
+.tab-panel ul{margin:0;padding-left:40px;height:140px;}
+.tab-panel li{margin:6px 0;color:var(--c-muted) }
+
+.tab-panel .note{
+  display:block;
+  visibility:hidden;
+  position:absolute;
+  top:-400px;
+  right:12px;
+  opacity:0.9;
+
+  padding:12px 24px;
+  border-radius:12px;
+  border:1px solid rgba(0,0,0,.06);
+  background:#fafafa;
+  width:98%;
+
+  max-height: 330px;          /* set to your available space */
+  overflow-y: auto;           /* creates an internal scrollbar when needed */
+  overflow-x: hidden;         /* prevents horizontal spill */
+  word-break: break-word;     /* prevents long tokens from forcing overflow */
+}
+.tab-panel:active .note { visibility: visible; }
+.note p {
+  display:block;
+  height:300px;
+  font-size:1.2em;
+  color:var(--c-ink);
+}
+
+/* state wiring (images + active panel + active gloss) */
+#tab-identity:checked ~ .tabs-hero .hero-identity,
+#tab-focus:checked    ~ .tabs-hero .hero-focus,
+#tab-activity:checked ~ .tabs-hero .hero-activity,
+#tab-intent:checked   ~ .tabs-hero .hero-intent{opacity:1}
+
+#tab-identity:checked ~ #panel01,
+#tab-focus:checked    ~ #panel02,
+#tab-activity:checked ~ #panel03,
+#tab-intent:checked   ~ #panel04 {display:block}
+
+#tab-identity:checked ~ .tabs-hero .tab-list label[for="tab-identity"],
+#tab-focus:checked    ~ .tabs-hero .tab-list label[for="tab-focus"],
+#tab-activity:checked ~ .tabs-hero .tab-list label[for="tab-activity"],
+#tab-intent:checked   ~ .tabs-hero .tab-list label[for="tab-intent"]{
+  color:var(--ink);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.45),inset 0 -1px 0 rgba(0,0,0,.15);
+}
+#tab-identity:checked ~ .tabs-hero .tab-list label[for="tab-identity"]::before,
+#tab-focus:checked    ~ .tabs-hero .tab-list label[for="tab-focus"]::before,
+#tab-activity:checked ~ .tabs-hero .tab-list label[for="tab-activity"]::before,
+#tab-intent:checked   ~ .tabs-hero .tab-list label[for="tab-intent"]::before{opacity:1}
+
+/* responsive */
+@media (max-width:820px){
+  .tab-list{grid-template-columns:repeat(2,minmax(0,1fr));height:auto}
+  .tab-list label{padding:14px 10px}
+}
+
+
+/*****/
+
+/* PLAIN glossy tabs: simple, stable, no pseudo-elements, no blur, no grid tricks */
+
+/* bar */
+.tab-list{
+  display:flex;
+  border:1px solid var(--c-line);
+  border-top-left-radius:1em;
+  border-top-right-radius:1em;
+  border-bottom:0;
+  overflow:hidden;
+  background:#fff;
+}
+
+/* buttons (labels) */
+.tab-list label{
+  flex:1;
+  padding:20px;
+  text-align:center;
+  font:400 15px/1.1 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  cursor:pointer;
+  user-select:none;
+  /* glossy look (single background gradient) */
+  background: linear-gradient(#ffffff, #f2f2f2);
+  color: lightslategray;
+  /* subtle “button edge” */
+  border-right:1px solid var(--c-line);
+  transition: background .18s ease, box-shadow .18s ease, transform .12s ease;
+  border-top:2px solid #fff;
+}
+.tab-list label::after{
+  content:"";
+  position:absolute;
+  left:20%;
+  right:20%;
+  bottom:0;
+  height:2px;
+  background:transparent;
+}
+.tab-list label:last-child{border-right:0}
+
+/* hover = glossier + slight lift */
+.tab-list label:hover{
+  background: #f8f8f8;
+  transform: translateY(-1px);
+  color: #111827;
+}
+
+/* active tab (radio checked) — keep it simple */
+#tab-identity:checked ~ .tabs-hero .tab-list label[for="tab-identity"],
+#tab-focus:checked    ~ .tabs-hero .tab-list label[for="tab-focus"],
+#tab-activity:checked ~ .tabs-hero .tab-list label[for="tab-activity"],
+#tab-intent:checked   ~ .tabs-hero .tab-list label[for="tab-intent"]{
+  background: #fff;
+  color:#D25353;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.18);
+  transform:none;
+}
+
+/* optional: make ONE active tab orange instead of black
+#tab-activity:checked ~ .tabs-hero .tab-list label[for="tab-activity"]{
+  background: linear-gradient(#ff8a2a, #ff6a00);
+} */
+
+/* mobile stack */
+@media (max-width:768px){
+  .tab-list{flex-direction:column}
+  .tab-list label{border-right:0;border-bottom:1px solid var(--c-line)}
+  .tab-list label:last-child{border-bottom:0}
+}

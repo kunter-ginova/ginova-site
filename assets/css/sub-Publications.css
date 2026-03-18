@@ -1,0 +1,505 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@300;400&display=swap');
+
+:root{
+      --ink:#111;
+      --muted:#6b6b6b;
+      --rule:#e9e9e9;
+      --paper:linear-gradient(180deg, #f8f9fb 0%, #fff 100%);
+      --accent:#d6a21a;          /* warm gold border like your screenshot */
+      --accent-soft:#fff7df;     /* warm pale fill */
+      --serif: Georgia, "Times New Roman", Times, serif;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+	--c1: #f0f8ff;
+	--c2: #303030;
+    }
+
+
+html, body{background:var(--rule); color:var(--ink);}
+
+.breadcrumb {
+    width:100%;
+    position:absolute;
+    top:85px; left:0;
+
+  padding: 0.75rem 2rem;
+  font-size: 0.8125rem;
+  letter-spacing: 0.02em;
+}
+
+.breadcrumb ol {
+  display: flex;
+  gap: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.breadcrumb li + li::before {
+  content: "/";
+  margin: 0 0.625rem;
+  color: var(--text-muted, #999);
+}
+
+.breadcrumb a {
+  color: var(--text-secondary, #666);
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  color: var(--accent, #8b2332);
+  text-decoration: underline;
+}
+
+.breadcrumb [aria-current="page"] {
+  color: var(--text-primary, #1a1a1a);
+  font-weight: 500;
+}
+
+article {
+  max-width: 1020px;
+	margin: 0 auto; 
+	font-size: 1.2rem;
+	padding: 2rem;
+  border-bottom-left-radius:  16px;
+  border-bottom-right-radius: 16px;
+}
+
+article p {
+    text-align:justify;
+    font-size:20px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+   	margin: 0 auto; 
+	padding: .5rem 0;
+}
+
+article p:first-child:first-letter {
+ color: #303030;
+ float: inline-start;
+ font-family: Georgia;
+ padding-top: 4px 3px 0;
+ padding-inline: 8px;
+ initial-letter:3;
+}
+
+article > p {
+	text-align: justify;
+	color: var(--c2);
+	text-shadow: 1px 1px 0px #fff6;
+}
+
+.article-body {
+  margin:0px auto 0;
+  padding:1em;
+}
+
+
+    /* page container */
+    main {
+      position:relative;
+      max-width: 1020px;
+      padding:1em 4em;
+      margin: 0 auto;
+      border:1px solid #eaeaea;
+      border-bottom-left-radius: 24px;
+      border-bottom-right-radius:24px;
+      background:var(--paper);
+    }
+
+    ul.authors {
+        display:block; list-style:none; 
+        height:110px;
+        margin:3em auto 4em;
+    }
+
+    ul.authors li.card {
+        display:inline-block;
+        width:400px;
+        margin:0 15px; padding:20px;
+        background:transparent; 
+        border:1px solid #eaeaea;
+        box-shadow: none;
+    }
+
+  li.card:hover,
+  li.card:before,
+  li.card::after {
+    transform: none;
+    box-shadow:none;
+
+}
+
+    /* HERO (matches your cover vibe + adds initials badge) */
+    .hero{
+        padding: 0 10px;
+        text-align:center;
+        padding-top: calc(var(--header-height, 72px) + 144px);
+        text-align: center;
+    }
+
+    .hero img {display:block;margin:3em auto 0.5em;}
+
+    .hero-kicker{
+      font-family:var(--sans);
+      letter-spacing:.22em;
+      line-height:.9em;
+      text-transform:uppercase;
+      font-size:12px;
+      color:var(--muted);
+      margin:0 auto;
+    }
+
+    .hero-title{
+      font-size: 54px;
+      line-height: 1.03;
+      margin: 14px auto;
+      font-weight: 700;
+    }
+    .hero-subtitle{
+      font-family:var(--sans);
+      font-style: italic;
+      font-size: 16px;
+      color:var(--muted);
+      margin: 1.5em auto;
+      max-width: 760px;
+    }
+    .hero-author{
+      font-family:var(--sans);
+      font-weight: 700;
+      margin: 18px 0 6px;
+    }
+    .hero-affils{
+      font-family:var(--sans);
+      color:var(--muted);
+      font-size: 13px;
+      margin: 0;
+    }
+
+    .hero-initials{
+      width: 78px;
+      height: 78px;
+      border-radius: 999px;
+      border: 1px solid var(--rule);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin: 0 auto 22px;
+      font-family: var(--sans);
+      font-weight: 800;
+      letter-spacing: .06em;
+      color: #111;
+      background: #fff;
+      box-shadow: 0 10px 26px rgba(0,0,0,.06);
+    }
+    .hero-initials span{
+      font-size: 22px;
+    }
+
+    .rule{
+      height:1px;
+      background:var(--rule);
+      margin: 22px 0;
+    }
+
+    /* content */
+
+    .section{
+      margin:-50px auto 0; padding:0;
+      min-height:auto;
+    }
+
+    .section-title{
+      font-family:var(--sans);
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      font-size:11px;
+      color:var(--muted);
+      margin:0 0 10px;
+    }
+    p{margin: 0 0 14px;}
+    p:last-child{margin-bottom:0;}
+
+    /* callout box exactly like your finishing panel */
+    .callout{
+      border: 1px solid var(--accent);
+      background: var(--accent-soft);
+      padding: 22px;
+      margin: 2em auto 0;
+      max-width: 860px;
+      text-align:justify;
+    }
+    .callout h3{
+      margin:.25em 0;
+      font-family:var(--sans);
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      font-size:1rem;
+      font-weight:700;
+      color:#111;
+    }
+    .callout p{
+      font-size: 15.5px;
+      margin: 0 0 12px;
+    }
+    .callout ul{
+      margin: 10px 0 14px 18px;
+      padding: 0;
+      font-size: 15.5px;
+    }
+    .callout li{
+      margin: 8px 0;
+    }
+
+    /* centered closing line */
+    .closing-line{
+      text-align:center;
+      font-size: 22px;
+      margin: 40px 0 24px;
+      font-weight: 600;
+    }
+
+    /* REFERENCES block */
+    .refs{
+      margin: 50px auto 100px;
+      padding-top: 50px;
+    }
+
+    .refs-title{
+      font-family:var(--sans);
+      text-align:center;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      font-size:11px;
+      color:var(--muted);
+      margin: 0 0 14px;
+    }
+
+    .refs ol {
+      margin: 1em auto;
+      max-width: 860px;
+      font-size: 12.5px;
+      color: #2b2b2b;
+      list-style-type: decimal;
+      padding-left: 2em;
+      list-style-position: outside;
+    }
+
+
+    .refs ol li {
+        padding:.3em;
+        line-height: 1.45;
+        }
+
+    .refs ol li a {color:var(--muted)}
+    .refs ol li a:hover {text-decoration:underline;}
+
+    .ref-item{
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      column-gap: 10px;
+      padding: 6px 0;
+    }
+    .ref-num{
+      text-align:right;
+      color:#111;
+      font-family: var(--sans);
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 1.45;
+    }
+    .ref-text{
+      font-family: var(--serif);
+      line-height: 1.45;
+    }
+
+    /* print-friendly */
+    @media print{
+      main {padding: 0.6in 0.55in;}
+      .hero-title{font-size: 42px;}
+      .closing-line{font-size: 18px;}
+    }
+
+
+h1 {
+    width:820px;
+    font-size: 54px;
+    font-family:Georgia, "Times New Roman", Times, serif;
+    line-height: 1.03;
+    margin: 0 0 14px;
+    font-weight: 700;
+}
+
+
+
+/*****************************/
+
+
+
+blockquote {
+  width:680px;
+  display:block;
+	position: relative;
+	padding: 3rem 1rem 2em;
+  margin:0 auto;
+	font-size: 1.75rem;
+	color: var(--c2);
+	background: conic-gradient(from 180deg at 100% calc(100% - 1rem), var(--c2) 0 25%, #fff0 0 100%), conic-gradient(from 180deg at 1rem 50%, var(--c2) 0 25%, #fff0 0 100%), conic-gradient(from 0deg at calc(100% - 1rem) 50%, var(--c2) 0 25%, #fff0 0 100%), conic-gradient(from 0deg at 0rem 1rem, var(--c2) 0 25%, #fff0 0 100%);
+}
+
+blockquote:before, 
+blockquote:after {
+	content: "";
+	position: absolute;
+	width: 3.5rem;
+	height: 4.5rem;
+	top: 4rem;
+	inset-inline-start: -4rem;
+	transform: rotate(5deg) scale(1.15);
+	background: 
+		radial-gradient(circle at 1.75rem 3rem, var(--c2) 1.5rem, #fff0 calc(1.5rem + 1px)), 
+		radial-gradient(circle at 3.5rem 1.5rem, #fff0 2rem, var(--c2) calc(2rem + 1px) calc(4rem + 1px), #fff0 calc(4rem + 2px));
+	filter: drop-shadow(3.5rem -0.5rem 0px var(--c2));
+	border-radius: 100%;
+}
+
+blockquote:after {
+	top: inherit;
+	bottom: 3rem;
+	transform: rotate(195deg) scale(1.15);
+	inset-inline-end: -4rem;
+	inset-inline-start: inherit;
+}
+
+blockquote p {
+	font-weight: bold;
+    text-align:start;
+    padding:0 1em 1em;
+    font-family:cursive;
+}
+
+blockquote p:after {
+	margin-inline-end: 2rem;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: flex-start;
+	content: " ";
+	display: inline-flex;
+	background: #f000;
+	width: 8rem;
+	height: 3rem;
+}
+
+blockquote p:first-letter {
+	background: var(--c2);
+	color: var(--c1);
+	padding: 0 0.5rem;
+	inset-inline-start: 5rem;
+	box-sizing: border-box;
+	font-size: 5rem;
+	float: inline-start;
+}
+
+blockquote cite {
+	font-weight: bold;
+	position: absolute;
+	bottom: 4rem;
+	background: var(--c2);
+	color: var(--c1);
+	inset-inline-end: 5rem;
+	padding: 0.5rem 1rem;
+  border-radius:1rem;
+}
+
+blockquote cite.citeInfo {
+    background:none;
+    color:var(--c2);
+    padding:0;
+    bottom:2em;
+    font-size:1rem;
+}
+
+@media only screen and (max-width: 767px) {
+	article {
+		max-width: 90%;
+	}
+}
+
+
+
+/* ---------- Drop cap: follow writing direction (LTR/RTL) ---------- */
+
+/* Use logical props and "start" so it flips automatically */
+article p:first-child::first-letter{
+  color:#303030;
+  font-family: Georgia;
+  float: inline-start;              /* modern */
+  margin-top:10px;
+  margin-inline:12px;
+/* pick ONE approach below */
+  /* initial-letter: 3; */          /* if you want initial-letter */
+  font-size: 3.6rem;                /* fallback for browsers without initial-letter */
+  line-height: .85;
+}
+
+/* Fallback for browsers that don't support float:inline-start */
+@supports not (float: inline-start){
+  article p:first-child::first-letter{ float:left; }
+  html[dir="rtl"] article p:first-child::first-letter{ float:right; }
+}
+
+/* ---------- Blockquote drop cap (your styled square) ---------- */
+blockquote p::first-letter{
+  background: var(--c2);
+  color: var(--c1);
+  padding: 1px 1rem;
+  box-sizing: border-box;
+  font-size: 5rem;
+  float: inline-start;              /* flips with direction */
+  margin-top: 0;
+  margin-inline-start: 2rem;      /* replaces margin-left */
+  margin-inline-end: 6px;           /* replaces margin-right */
+  border-radius:.5rem;
+}
+
+/* Fallback for older browsers */
+@supports not (float: inline-start){
+  blockquote p::first-letter{ float:left; }
+  html[dir="rtl"] blockquote p::first-letter{ float:right; }
+}
+
+/* Optional: keep punctuation behaving in RTL */
+html[dir="rtl"] article p:first-child,
+html[dir="rtl"] blockquote p{
+  unicode-bidi: plaintext;
+}
+
+
+.refs ul.keyWords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  margin: 0.5em 0 4em;
+  padding: 0;
+}
+
+ul.keyWords li {
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  padding: 8px 14px;
+  background: #f4f6f8;
+  color: #4a5a6e;
+  border-radius: 8px;
+  font-weight: 500;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  padding: 8px 14px;
+  background: #f4f6f8;
+  color: #4a5a6e;
+  border:1px solid #eaeaea;
+  border-radius: 6px;
+  font-weight: 500;
+}

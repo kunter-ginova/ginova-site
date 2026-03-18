@@ -1,0 +1,294 @@
+/* ============================================
+   GiNOVA — Core Styles
+   Shared across all pages
+   ============================================ */
+
+/* ---------- Design Tokens ---------- */
+:root {
+  /* Layout */
+  --header-h: 72px;
+  --container-w: 1120px;
+  --container-pad: clamp(16px, 4vw, 24px);
+
+  /* Colors */
+  --c-bg: #ffffff;
+  --c-ink: #0b0c0f;
+  --c-muted: #5c616b;
+  --c-line: rgba(15, 18, 25, 0.10);
+  --c-soft: #f6f7f9;
+  --c-accent: #ff3f33;
+
+  /* Language Button Flag Colors */
+  --c-flag-en: #1a4480;
+  --c-flag-es: #F1BF00;
+  --c-flag-tr: #e30a17;
+  --c-flag-it: #008c45;
+  --c-flag-de: #000000;
+
+  /* Shadows */
+  --shadow-sm: 0 4px 12px rgba(10, 12, 18, 0.06);
+  --shadow-md: 0 10px 24px rgba(10, 12, 18, 0.10);
+  --shadow-lg: 0 16px 40px rgba(10, 12, 18, 0.12);
+
+  /* Typography */
+  --f-sans: Inter, system-ui, -apple-system, sans-serif;
+  --f-serif: Fraunces, Georgia, serif;
+
+  /* Animation */
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast: 150ms;
+  --dur-med: 250ms;
+}
+
+/* ---------- Reset ---------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+[hidden] { display: none !important; }
+
+/* 1) Let the browser flip bidi layout globally */
+html[dir="rtl"] body { direction: rtl; }
+
+/* 2) Fix “left/right” hardcoded paddings/margins and alignments using logical props */
+html[dir="rtl"] .site-header,
+html[dir="rtl"] .page,
+html[dir="rtl"] .article,
+html[dir="rtl"] .container { text-align: right; }
+
+/* 3) Breadcrumbs and inline separators often break in RTL */
+html[dir="rtl"] .breadcrumbs { direction: rtl; }
+html[dir="rtl"] .breadcrumbs .sep { transform: scaleX(-1); } /* if you use chevrons/arrows */
+
+/* 4) Any components that MUST stay LTR (code, numbers, citations, URLs) */
+.code, pre, code, .ltr, .doi, .url { direction: ltr; unicode-bidi: plaintext; text-align: left; }
+html[dir="rtl"] .ltr { direction: ltr; text-align: left; }
+
+/* 5) Use logical spacing everywhere (start/end instead of left/right) */
+.card, .box, .nav, .hero, .quote {
+  padding-inline: 24px;     /* replaces padding-left/right */
+  margin-inline: auto;      /* replaces left/right auto centering */
+}
+
+/* 6) Dropdown alignment: anchor menu to “inline-end” */
+.lang-menu {
+  inset-inline-end: 0;      /* replaces right:0 */
+  inset-inline-start: auto;
+}
+
+
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+}
+
+body {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+  font-family: var(--f-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--c-ink);
+  background: var(--c-bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+img, video, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+}
+
+footer { background:url(../img/bg-Euclidean.png) bottom -75px/cover no-repeat;padding:0;margin:0 auto;}
+
+/* ul, ol {} */
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  position:absolute;
+  bottom:100px;right:240px;
+}
+
+.tabMessage {
+  display:block;
+  width:1130px; height:340px;
+  visibility:visible;
+  position:absolute;
+  bottom:216px; right:-240px;
+  font-size:1.2em;font-family:'Courier New', Courier, monospace;
+  z-index:100;
+  padding:1em 2em ;
+  text-align:justify;
+  max-height: 340px; 
+  overflow-y: auto; overflow-x: hidden;
+  word-break: break-word;
+  border-radius:18px;
+}
+
+/* purely presentational */
+#panel01 ul.focus-list li,
+#panel02 ul.focus-list li,
+#panel03 ul.focus-list li,
+#panel04 ul.focus-list li { 
+  display:block;
+  visibility:visible;
+  cursor: pointer;
+  transition: color 0.25s ease, opacity 0.25s ease;
+  opacity:1;
+  list-style:disc;
+}
+
+ul.focus-list {
+  padding-left: 1.2rem;
+  list-style:disc;
+}
+
+.focus-list li.is-active {
+  opacity: 0.25;         /* fade */
+}
+
+.focus-list li, .focus-list li:not(.is-active) {
+  color:var(--c-muted);
+  opacity: 0.25;         /* fade */
+ }
+
+.focus-list li.is-active {
+  opacity: 1;
+  color: var(--c-ink);           /* or slightly stronger for emphasis */
+}
+
+.tab-panel.has-selection .focus-list li {
+  opacity: 0.25;
+  list-style:disc;
+}
+
+.tab-panel.has-selection .focus-list li.is-active {
+  opacity: 1;
+  font-weight:600;
+}
+
+.switch .tabMessage { display: block; } /* sections exist; visibility is controlled via [hidden] */
+
+
+.focus-overlay {
+  display:none;
+  position:absolute; 
+  bottom:215px; right:-242px;
+  width:1130px; height:343px;
+  background:#202020;
+  border:2px solid black;
+  border-radius:18px;
+  opacity:.93;
+}
+
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* ---------- Container ---------- */
+.container {
+  width: min(var(--container-w), 100% - var(--container-pad) * 2);
+  margin-inline: auto;
+}  
+
+/* ---------- Typography ---------- */
+.text-muted {
+  color: var(--c-muted);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---------- Responsive Breakpoints ---------- */
+@media (max-width: 768px) {
+  :root {
+    --header-h: 64px;
+  }
+}
+
+@media (max-width: 560px) {
+  .container {
+    width: calc(100% - 24px);
+  }
+}
+
+
