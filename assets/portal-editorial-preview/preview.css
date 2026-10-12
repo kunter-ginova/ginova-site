@@ -1,0 +1,61 @@
+/* Reversible editorial proposal. Existing art, transitions and site links retained. */
+body:has(.portal-stage) .gate-title,
+body:has(.portal-stage) .gate-engineering .gate-title,
+body:has(.portal-stage) .gate.is-selected .gate-title,
+body:has(.portal-stage) .portal-stage.has-selection .gate:not(.is-selected) .gate-title{
+ top:clamp(94px,17svh,156px)!important;bottom:auto!important;inset-inline:8% 8%!important;width:auto!important;max-height:none!important;margin:0!important;padding:0!important;
+ font-size:clamp(26px,2.8vw,44px)!important;font-weight:500;line-height:1.04!important;letter-spacing:-.035em;transform:none!important;writing-mode:horizontal-tb!important;text-align:start;text-wrap:balance;hyphens:none;overflow-wrap:normal;word-break:normal;
+}
+body:has(.portal-stage) .gate-title:before{font-size:16px;line-height:1.1;margin-bottom:14px;font-weight:500;letter-spacing:.015em;}
+body:has(.portal-stage) .gate-soundlab .gate-title{font-size:clamp(30px,3.25vw,50px)!important;text-transform:none;}
+body:has(.portal-stage) .portal-stage.has-selection .gate:not(.is-selected) .gate-title{font-size:clamp(20px,2vw,29px)!important;overflow-wrap:anywhere;}
+body:has(.portal-stage) .gate-bottom{top:calc(clamp(94px,17svh,156px) + var(--preview-title-height,110px) + 24px);bottom:auto!important;inset-inline:8% 8%;}
+body:has(.portal-stage) .gate .gate-copy{height:auto!important;min-height:72px;max-height:none;overflow:visible;}
+body:has(.portal-stage) .gate-description,body:has(.portal-stage) .gate-offer{position:static!important;font-size:15px!important;line-height:1.55!important;font-weight:400;max-width:34ch;margin:0 0 24px;color:#f1f3ed!important;transform:none!important;opacity:1;}
+body:has(.portal-stage) .gate .gate-description{display:block!important;}
+body:has(.portal-stage) .gate .gate-offer{display:none!important;}
+body:has(.portal-stage) .gate.is-selected .gate-description{display:none!important;}
+body:has(.portal-stage) .gate.is-selected .gate-offer{display:block!important;}
+body:has(.portal-stage) .portal-stage.has-selection .gate:not(.is-selected) .gate-copy{display:block!important;}
+body:has(.portal-stage) .portal-stage.has-selection .gate:not(.is-selected) .gate-description{font-size:13px!important;line-height:1.5!important;}
+body:has(.portal-stage) .gate-select{inset:22px 8% auto auto!important;width:44px!important;height:44px!important;min-height:44px;display:flex;align-items:center;justify-content:center;padding:0!important;border:1px solid #ffffff45;border-radius:50%;background:#07101822;}
+html[dir=rtl] body:has(.portal-stage) .gate-select{inset:22px auto auto 8%!important;}
+body:has(.portal-stage) .gate-select .select-symbol{position:static!important;inset:auto!important;font-size:27px;font-weight:300;line-height:1;color:#FAFAF8;}
+body:has(.portal-stage) .gate-select .select-label{position:absolute!important;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;}
+body:has(.portal-stage) .gate-top{top:38px;inset-inline:8% 30%;font-size:10px;letter-spacing:.12em;color:#e9eeea;}
+body:has(.portal-stage) .gate-signal{display:none;}
+body:has(.portal-stage) .gate .enter,body:has(.portal-stage) .gate.is-selected .enter{display:flex!important;align-items:center;justify-content:space-between;gap:12px;min-height:46px!important;padding:12px 0!important;border:0!important;border-top:1px solid #ffffff65!important;border-radius:0!important;background:transparent!important;color:#FAFAF8!important;box-shadow:none!important;font-size:14px!important;font-weight:550;line-height:1.4;white-space:normal;}
+body:has(.portal-stage) .enter-action,body:has(.portal-stage) .enter-icon{display:none!important;}
+body:has(.portal-stage) .gate .enter-name{font-size:14px!important;font-weight:550;line-height:1.4;margin:0!important;opacity:1;}
+body:has(.portal-stage) .gate .enter::after{content:'↗'!important;display:block!important;font-size:22px;border:0!important;transform:none!important;width:auto!important;height:auto!important;flex:none;margin:0;}
+body:has(.portal-stage) .gate .enter:hover{color:#ffffff!important;border-top-color:#ffffff!important;}
+body:has(.portal-stage) .gate .enter:focus-visible,body:has(.portal-stage) .gate-select:focus-visible{outline:2px solid #FAFAF8;outline-offset:5px;}
+body:has(.portal-stage) .reset{top:auto;bottom:28px;border-color:#ffffff55;background:#07101855;border-radius:999px;}
+body:has(.portal-stage)>header .language-switcher .language-trigger{background:#fff!important;color:#0B1F3B!important;border-color:#cfd6d9!important;border-radius:6px;box-shadow:none!important;min-height:44px;font-weight:450;}
+body:has(.portal-stage)>header .language-switcher .language-globe{color:#58656d;}
+body:has(.portal-stage)>header .language-switcher .language-trigger:focus-visible{outline:2px solid #2F8F8F;outline-offset:3px;}
+.gn-preview-guidance{font-size:15px;line-height:1.6;max-width:65ch;color:#4B4F56;margin:18px 0 0;}
+@media(max-width:700px){
+ body:has(.portal-stage) .gate-title,body:has(.portal-stage) .gate-engineering .gate-title,body:has(.portal-stage) .gate.is-selected .gate-title,body:has(.portal-stage) .portal-stage.has-selection .gate:not(.is-selected) .gate-title{top:18px!important;inset-inline:6% 19%!important;font-size:clamp(21px,5.5vw,30px)!important;line-height:1.05!important;}
+ body:has(.portal-stage) .gate-title:before{font-size:12px;line-height:1;margin-bottom:6px;}
+ body:has(.portal-stage) .gate-bottom{top:calc(18px + var(--preview-title-height,64px) + 10px);inset-inline:6% 6%;bottom:auto!important;display:block!important;}
+ body:has(.portal-stage) .gate .gate-copy{min-height:0;max-height:none;}
+ body:has(.portal-stage) .gate-description,body:has(.portal-stage) .gate-offer{font-size:12px!important;line-height:1.4!important;margin-bottom:8px;max-width:48ch;}
+ body:has(.portal-stage) .gate .enter,body:has(.portal-stage) .gate.is-selected .enter{min-height:44px!important;padding:8px 0!important;}
+ body:has(.portal-stage) .gate .enter-name{font-size:12px!important;}
+ body:has(.portal-stage) .gate-select{inset:14px 5% auto auto!important;}
+ html[dir=rtl] body:has(.portal-stage) .gate-select{inset:14px auto auto 5%!important;}
+ body:has(.portal-stage) .portal-stage.has-selection .gate:not(.is-selected) .gate-copy{display:none!important;}
+ body:has(.portal-stage) .portal-stage.has-selection .gate:not(.is-selected) .gate-bottom{display:none!important;}
+ body:has(.portal-stage) .portal-stage .gate.is-selected .gate-copy{display:block!important;max-height:24svh;overflow:auto;}
+ body:has(.portal-stage) .reset{bottom:10px;font-size:10px;min-height:36px;padding:7px 12px;}
+}
+/* Remove the retired entry ornament; the only navigation mark is now the arrow. */
+body:has(.portal-stage) .gate .enter::before{content:none!important;display:none!important;}
+
+body:has(.portal-stage) .gate .enter::after{content:none!important;display:none!important;}
+.preview-visit-arrow{display:flex;flex:none;align-items:center;justify-content:center;width:24px;height:24px;}
+/* Guidance shares the same logical gutters as the headline, body and CTA in every locale. */
+.gn-owner-brief .wrap>.gn-preview-guidance{margin:18px 0 0;padding:0;text-align:start;}
+.gn-owner-intro[data-intro-animating]{overflow:hidden;will-change:height;}
+@media(prefers-reduced-motion:reduce){.gn-owner-intro{scroll-behavior:auto;}}
