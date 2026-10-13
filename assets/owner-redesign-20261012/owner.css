@@ -260,3 +260,11 @@ body[data-gn-site="portal"]:has(.portal-stage)>header .gn-owner-wording-stack .b
   }
 }
 
+/* Owner adjustment: lift only the portal emblem; reserve its existing layout. */
+body[data-gn-site="portal"]:has(.portal-stage)>header .ginova-crest-frame {
+  transform:translateY(-2px);
+}
+/* Bring the portal wordmark 1px closer to its motto without moving the motto. */
+body[data-gn-site="portal"]:has(.portal-stage)>header .gn-owner-wording-stack .ginova-wordmark-frame {
+  transform:translateY(1px);
+}
