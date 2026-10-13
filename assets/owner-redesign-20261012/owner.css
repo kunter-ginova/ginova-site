@@ -233,3 +233,30 @@ body:is([data-gn-site="engineering"],[data-gn-site="consultancy"])>header.ginova
   }
 }
 
+/* Portal lockup balance: larger emblem and a 2px lift for the motto. */
+body[data-gn-site="portal"]:has(.portal-stage)>header .ginova-crest-frame {
+  width:69px!important;
+  height:62px!important;
+  flex:0 0 69px!important;
+}
+body[data-gn-site="portal"]:has(.portal-stage)>header .ginova-crest-frame>img {
+  width:auto!important;
+  height:62px!important;
+  max-width:100%!important;
+  flex:none!important;
+  object-fit:contain!important;
+}
+body[data-gn-site="portal"]:has(.portal-stage)>header .gn-owner-wording-stack .brand-line {
+  transform:translateY(-2px)!important;
+}
+@media(max-width:700px) {
+  body[data-gn-site="portal"]:has(.portal-stage)>header .ginova-crest-frame {
+    width:60px!important;
+    height:54px!important;
+    flex-basis:60px!important;
+  }
+  body[data-gn-site="portal"]:has(.portal-stage)>header .ginova-crest-frame>img {
+    height:54px!important;
+  }
+}
+
