@@ -4,7 +4,7 @@ body:has(.portal-stage)>header .brand-line{display:flex!important;flex-direction
 body:has(.portal-stage)>header .brand-line>span{display:block;white-space:nowrap}
 .gn-owner-intro{background:#FAFAF8;color:#0B1F3B;margin:0;border:0;border-bottom:1px solid #dfe5e5}
 .gn-owner-intro>summary{min-height:44px;display:flex;justify-content:space-between;align-items:center;gap:18px;padding:10px 5%;cursor:pointer;font-size:14px;font-weight:600;list-style:none}
-.gn-owner-intro>summary::-webkit-details-marker{display:none}.gn-owner-intro>summary:after{content:'+';font-size:22px;font-weight:400}.gn-owner-intro[open]>summary:after{content:'−'}
+.gn-owner-intro>summary::-webkit-details-marker{display:none}.gn-owner-intro>summary:after{content:'+';font-size:22px;font-weight:400}.gn-owner-intro[open]>summary:after{content:'-'}
 .gn-owner-intro>summary:focus-visible{outline:3px solid #2F8F8F;outline-offset:-4px}
 .gn-owner-brief{padding-block:26px 34px}.gn-owner-brief h1{font-size:clamp(30px,4vw,50px);max-width:28ch;margin-bottom:14px}.gn-owner-brief .gn-strategy-hero-lead{font-size:16px;line-height:1.5!important}.gn-owner-brief .gn-strategy-cta{margin-top:8px}
 body:has(.portal-stage) .portal-stage{height:100svh!important;min-height:100svh!important;max-height:100svh;scroll-margin-top:0}
@@ -267,4 +267,13 @@ body[data-gn-site="portal"]:has(.portal-stage)>header .ginova-crest-frame {
 /* Bring the portal wordmark 1px closer to its motto without moving the motto. */
 body[data-gn-site="portal"]:has(.portal-stage)>header .gn-owner-wording-stack .ginova-wordmark-frame {
   transform:translateY(1px);
+}
+
+/* Fit the approved transparent wordmark canvas to the established header frame.
+   Cover trims only surrounding transparent padding and preserves image proportions. */
+body[data-gn-site="portal"]:has(.portal-stage)>header .gn-owner-wording-stack .ginova-wordmark-frame .ginova-wordmark {
+  object-fit:cover!important;
+}
+body[data-gn-site="portal"]:has(.portal-stage)>header .gn-owner-wording-stack .ginova-wordmark-frame {
+  background:transparent!important;
 }
