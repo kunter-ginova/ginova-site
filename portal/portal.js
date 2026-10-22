@@ -78,7 +78,10 @@ function stopPanelMotion() {
   stage.classList.remove('is-transforming');
 }
 function transformPanels(update) {
-  const canAnimate=!off&&!reduce.matches&&!document.hidden;
+  // Motion snapshots use the unscrolled panel origin. A short, scrolled panel
+  // settles directly so its live link is never displaced during the transition.
+  const scrolledPanel=gates.some(gate=>gate.scrollTop!==0||gate.scrollLeft!==0);
+  const canAnimate=!off&&!reduce.matches&&!document.hidden&&!scrolledPanel;
   // Capture rendered widths and visible frozen layers before interrupting.
   const before=canAnimate?panelSnapshot(true):null;
   stopPanelMotion();
@@ -212,6 +215,33 @@ function setPixels(element, property, value) {
   const next = Math.ceil(value) + 'px';
   if (element.style.getPropertyValue(property) !== next) element.style.setProperty(property, next);
 }
+function measureViewport() {
+  const root = document.documentElement;
+  const viewport = window.visualViewport;
+  // Browser chrome changes the visible height without changing the layout width.
+  // Pinch zoom must not reflow the triptych into the magnified viewing area.
+  if (!viewport || Math.abs(viewport.scale - 1) < .01) {
+    const height = viewport ? viewport.height : innerHeight;
+    const next = height + 'px';
+    if (root.style.getPropertyValue('--portal-active-viewport-height') !== next)
+      root.style.setProperty('--portal-active-viewport-height', next);
+  }
+  const overview = document.getElementById('gn-company-overview');
+  const summary = overview?.querySelector('summary');
+  let expandedHeight = 0;
+  if (overview && summary) {
+    const style = getComputedStyle(overview);
+    const closedHeight = summary.getBoundingClientRect().height +
+      (parseFloat(style.borderTopWidth) || 0) + (parseFloat(style.borderBottomWidth) || 0);
+    expandedHeight = Math.max(0, overview.getBoundingClientRect().height - closedHeight);
+  }
+  // Use the stage's real document position, including the actual header and summary.
+  // An expanded overview is a scrollable introduction, not chrome to deduct twice.
+  const top = Math.max(0, stage.getBoundingClientRect().top + scrollY - expandedHeight);
+  const next = top + 'px';
+  if (root.style.getPropertyValue('--portal-top-height') !== next)
+    root.style.setProperty('--portal-top-height', next);
+}
 function measureLayout() {
   layoutFrame = 0;
   if (panelMotionActive) return;
@@ -221,6 +251,7 @@ function measureLayout() {
   setPixels(root, '--portal-header-height', header.getBoundingClientRect().height);
   setPixels(root, '--portal-nav-height', nav.getBoundingClientRect().height);
   setPixels(root, '--portal-footer-height', document.querySelector('footer').getBoundingClientRect().height);
+  measureViewport();
   let minimumHeight = 540;
   gates.forEach(gate => {
     const bottom = gate.querySelector('.gate-bottom');
@@ -318,17 +349,24 @@ mobile.addEventListener('change', () => { stopPanelMotion(); sceneLabels(); sche
 document.addEventListener('visibilitychange', () => { if (document.hidden) finish(); render(); });
 addEventListener('pagehide', () => { stopPanelMotion(); finish(); document.body.classList.add('motion-off'); });
 addEventListener('pageshow', () => { lang = initialLanguage(); render(); });
-let viewportWidth=innerWidth;
-addEventListener('resize', () => {
-  // Mobile browser chrome can change height during a scroll; it must not cancel a choice.
-  if(innerWidth!==viewportWidth){viewportWidth=innerWidth;stopPanelMotion()}
+function viewportChanged() {
+  if (window.visualViewport && Math.abs(visualViewport.scale - 1) >= .01) return;
+  // Settle geometry only; the selected division and its navigation are preserved.
+  stopPanelMotion();
   scheduleLayout();
-});
+}
+addEventListener('resize', viewportChanged, {passive:true});
+window.visualViewport?.addEventListener('resize', viewportChanged, {passive:true});
 if ('ResizeObserver' in window) {
   const resize = new ResizeObserver(scheduleLayout);
   resize.observe(document.querySelector('header'));
   resize.observe(document.querySelector('.quick-nav'));
   resize.observe(document.querySelector('footer'));
+  const overview = document.getElementById('gn-company-overview');
+  if (overview) {
+    resize.observe(overview);
+    resize.observe(overview.querySelector('summary'));
+  }
   gates.forEach(gate => { resize.observe(gate); resize.observe(gate.querySelector('.gate-bottom')); });
 }
 if (document.fonts) document.fonts.ready.then(scheduleLayout);

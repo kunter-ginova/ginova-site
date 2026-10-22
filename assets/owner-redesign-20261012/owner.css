@@ -1,4 +1,4 @@
-/* Owner-directed compact portal. Header/footer remain outside the full-screen stage. */
+/* Owner-directed compact portal. The header and closed overview share one viewport with the stage. */
 body:has(.portal-stage)>header{height:auto;min-height:76px;flex-wrap:wrap;column-gap:22px;row-gap:8px}
 body:has(.portal-stage)>header .brand-line{display:flex!important;flex-direction:column;justify-content:center;flex-shrink:0;gap:0;padding:0;border:0;border-radius:0;background:transparent;box-shadow:none;margin:0;color:#0B1F3B;font-size:12px;line-height:1.18;letter-spacing:0;max-width:245px}
 body:has(.portal-stage)>header .brand-line>span{display:block;white-space:nowrap}
@@ -7,7 +7,11 @@ body:has(.portal-stage)>header .brand-line>span{display:block;white-space:nowrap
 .gn-owner-intro>summary::-webkit-details-marker{display:none}.gn-owner-intro>summary:after{content:'+';font-size:22px;font-weight:400}.gn-owner-intro[open]>summary:after{content:'-'}
 .gn-owner-intro>summary:focus-visible{outline:3px solid #2F8F8F;outline-offset:-4px}
 .gn-owner-brief{padding-block:26px 34px}.gn-owner-brief h1{font-size:clamp(30px,4vw,50px);max-width:28ch;margin-bottom:14px}.gn-owner-brief .gn-strategy-hero-lead{font-size:16px;line-height:1.5!important}.gn-owner-brief .gn-strategy-cta{margin-top:8px}
-body:has(.portal-stage) .portal-stage{height:100svh!important;min-height:100svh!important;max-height:100svh;scroll-margin-top:0}
+html{--portal-active-viewport-height:100vh;--portal-top-height:var(--portal-header-height,0px)}
+@supports(height:100dvh){html{--portal-active-viewport-height:100dvh}}
+body:has(.portal-stage) .portal-stage{height:max(0px,calc(var(--portal-active-viewport-height) - var(--portal-top-height)))!important;min-height:0!important;max-height:none;scroll-margin-top:0}
+/* Short windows retain the composition boundary; each panel's contents remain reachable. */
+body:has(.portal-stage) .gate{overflow-x:hidden;overflow-y:auto;scrollbar-width:thin;overscroll-behavior-y:contain}
 .gate-title:before{content:'GiNOVA';display:block;font-size:.35em;line-height:1.15;font-weight:500;letter-spacing:.02em;margin-bottom:.15em;white-space:nowrap;text-transform:none}
 .gate-engineering .gate-title,.gate-decision .gate-title{text-transform:uppercase}
 header.ginova-branch-header .brand>span:last-child{display:flex;flex-direction:column;align-items:flex-start;gap:3px}
