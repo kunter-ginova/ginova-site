@@ -1,0 +1,44 @@
+/* Language switch, refined 2026-11-05: quiet pill trigger, grouped panel, names set in tiny subset fonts. */
+@font-face{font-family:'GN Names';src:url('/assets/evolution-20261105/names-ar.woff2') format('woff2');unicode-range:U+0600-06FF;font-display:swap}
+body .language-switcher .language-native,body .language-trigger,body .language-panel,body .language-panel .language-option,body .language-name{font-family:'Inter','GN Names',system-ui,sans-serif!important}
+@font-face{font-family:'GN Names';src:url('/assets/evolution-20261105/names-zh.woff2') format('woff2');unicode-range:U+7B80,U+4F53,U+4E2D,U+6587;font-display:swap}
+@font-face{font-family:'GN Names';src:url('/assets/evolution-20261105/names-ru.woff2') format('woff2');unicode-range:U+0400-04FF;font-display:swap}
+body [data-language-theme="portal"]{--language-bg:#fffffff5;--language-line:#0b1f3b1f;--language-tint:#0b1f3b0a;--language-accent:#2b6d70;--language-ink:#0B1F3B;--language-muted:#5c6a73;--language-radius:999px;--language-shadow:0 18px 48px #0b1f3b24;color-scheme:light}
+header .language-switcher{width:auto;min-width:0}
+body .language-switcher .language-trigger{min-height:40px;width:auto;padding:0 14px 0 12px;gap:8px;border-color:var(--language-line);background:#fff;box-shadow:none;font-size:13px;font-weight:500;letter-spacing:.01em}
+body .language-switcher .language-trigger:hover,body .language-switcher .language-trigger[aria-expanded="true"]{background:#0b1f3b0a;border-color:#2b6d70}
+body .language-trigger .language-globe{width:16px;height:16px;opacity:.8}
+body .language-trigger .language-chevron{width:11px;height:11px;opacity:.7}
+body .language-panel{width:236px;padding:6px;border-radius:16px;background:var(--language-bg);-webkit-backdrop-filter:blur(18px) saturate(1.2);backdrop-filter:blur(18px) saturate(1.2);box-shadow:var(--language-shadow)}
+body .language-panel .language-heading{padding:8px 12px 8px;margin:0 0 4px;border-bottom:0;font-size:11px;font-weight:500;letter-spacing:.08em;color:var(--language-muted)}
+body .language-panel .language-option{min-height:40px;padding:6px 12px;margin:0;gap:10px;border:0;border-radius:10px;font-size:14px;font-weight:450;position:relative}
+body .language-panel .language-option::before{content:"";width:6px;height:6px;border-radius:50%;flex:none;background:transparent;transition:background-color .15s ease,box-shadow .15s ease}
+body .language-panel .language-option[aria-checked="true"]{background:#2b6d7014;border:0}
+body .language-panel .language-option[aria-checked="true"]::before{background:var(--language-accent);box-shadow:0 0 0 3px #2b6d7026}
+body .language-panel .language-check{display:none}
+body .language-panel .language-code{width:auto;font-size:10.5px;letter-spacing:.1em;opacity:.75}
+body .language-panel .language-option:hover,body .language-panel .language-option:focus-visible{background:#0b1f3b0d}
+body .language-panel .language-option:focus-visible{outline:2px solid var(--language-accent);outline-offset:-2px}
+.language-panel .language-sep{height:1px;margin:5px 12px;background:linear-gradient(90deg,transparent,#0b1f3b24 20%,#0b1f3b24 80%,transparent)}
+@media(max-width:700px){body .language-panel .language-option{min-height:44px}}
+
+html[dir=ltr] .language-panel .language-option .language-name{text-align:left}
+
+/* Trigger: no border, no background effect. A 3px bar of three 30px segments shows the chosen language in its colours. */
+body .language-switcher .language-trigger,body .language-switcher .language-trigger:hover,body .language-switcher .language-trigger[aria-expanded="true"]{border:0;border-radius:0;background:transparent;box-shadow:none;position:relative;padding:0 8px 6px 0}
+body .language-switcher .language-trigger::after{content:"";position:absolute;inset-inline-start:0;bottom:0;box-sizing:content-box;width:calc(var(--seg,12px)*8);height:2px;border:0;border-radius:0;background:linear-gradient(90deg,var(--l1) calc(var(--seg,12px)*0) calc(var(--seg,12px)*1),var(--l2) calc(var(--seg,12px)*1) calc(var(--seg,12px)*2),var(--l3) calc(var(--seg,12px)*2) calc(var(--seg,12px)*3),var(--l4) calc(var(--seg,12px)*3) calc(var(--seg,12px)*4),var(--l5) calc(var(--seg,12px)*4) calc(var(--seg,12px)*5),var(--l6) calc(var(--seg,12px)*5) calc(var(--seg,12px)*6),var(--l7) calc(var(--seg,12px)*6) calc(var(--seg,12px)*7),var(--l8) calc(var(--seg,12px)*7) calc(var(--seg,12px)*8))}
+html{--l1:#E30A17;--l2:#E30A17;--l3:#E30A17;--l4:#E30A17;--l5:#E30A17;--l6:#E30A17;--l7:#E30A17;--l8:#E30A17;}
+html[lang^="tr"]{--l1:#E30A17;--l2:#E30A17;--l3:#E30A17;--l4:#E30A17;--l5:#E30A17;--l6:#E30A17;--l7:#E30A17;--l8:#E30A17;}
+html[lang^="az"]{--l1:#00B5E2;--l2:#00B5E2;--l3:#00B5E2;--l4:#EF3340;--l5:#EF3340;--l6:#509E2F;--l7:#509E2F;--l8:#509E2F;}
+html[lang^="en"]{--l1:#2D4A9C;--l2:#2D4A9C;--l3:#2D4A9C;--l4:#2D4A9C;--l5:#2D4A9C;--l6:#2D4A9C;--l7:#2D4A9C;--l8:#2D4A9C;}
+html[lang^="de"]{--l1:#000;--l2:#000;--l3:#000;--l4:#DD0000;--l5:#DD0000;--l6:#FFCE00;--l7:#FFCE00;--l8:#FFCE00;}
+html[lang^="fr"]{--l1:#0055A4;--l2:#0055A4;--l3:#0055A4;--l4:#fff;--l5:#fff;--l6:#EF4135;--l7:#EF4135;--l8:#EF4135;}
+html[lang^="it"]{--l1:#008C45;--l2:#008C45;--l3:#008C45;--l4:#fff;--l5:#fff;--l6:#CD212A;--l7:#CD212A;--l8:#CD212A;}
+html[lang^="es"]{--l1:#AA151B;--l2:#AA151B;--l3:#F1BF00;--l4:#F1BF00;--l5:#F1BF00;--l6:#F1BF00;--l7:#AA151B;--l8:#AA151B;}
+html[lang^="ru"]{--l1:#fff;--l2:#fff;--l3:#fff;--l4:#0039A6;--l5:#0039A6;--l6:#D52B1E;--l7:#D52B1E;--l8:#D52B1E;}
+html[lang^="ar"]{--l1:#006C35;--l2:#006C35;--l3:#006C35;--l4:#006C35;--l5:#006C35;--l6:#006C35;--l7:#006C35;--l8:#006C35;}
+html[lang^="zh"]{--l1:#DE2910;--l2:#DE2910;--l3:#DE2910;--l4:#FFDE00;--l5:#FFDE00;--l6:#DE2910;--l7:#DE2910;--l8:#DE2910;}
+
+/* One width for the switch trigger in every language (the longest name is Azerbaycani). */
+body .language-switcher .language-trigger,body .language-switcher .language-trigger:hover,body .language-switcher .language-trigger[aria-expanded="true"]{width:136px;box-sizing:border-box}
+body .language-trigger .language-current{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
