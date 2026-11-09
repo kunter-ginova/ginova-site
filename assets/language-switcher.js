@@ -8,7 +8,8 @@ trigger.innerHTML=svg('<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c5 5
 trigger.firstElementChild.classList.add('language-globe');trigger.lastElementChild.classList.add('language-chevron');
 const current=trigger.querySelector('.language-current'),panel=document.createElement('div');panel.className='language-panel';panel.id='language-menu';panel.hidden=true;panel.dataset.languageTheme=host.dataset.languageTheme;panel.setAttribute('role','menu');panel.setAttribute('aria-labelledby','language-heading');
 const heading=document.createElement('div');heading.className='language-heading';heading.id='language-heading';heading.setAttribute('role','presentation');panel.append(heading);
-const options=Array.from(native.options).map(option=>{
+let lastGroup=null;const options=Array.from(native.options).map(option=>{
+ if(lastGroup!==null&&option.dataset.group!==lastGroup){const sep=document.createElement('div');sep.className='language-sep';sep.setAttribute('role','separator');panel.append(sep)}lastGroup=option.dataset.group;
  const button=document.createElement('button');button.type='button';button.className='language-option';button.dataset.language=option.value;button.setAttribute('role','menuitemradio');button.setAttribute('aria-checked','false');button.tabIndex=-1;
  const name=document.createElement('span');name.className='language-name';name.lang=option.lang;name.dir=option.dir;name.textContent=option.textContent;
  const code=document.createElement('span');code.className='language-code';code.dir='ltr';code.textContent=option.value.toUpperCase();code.setAttribute('aria-hidden','true');

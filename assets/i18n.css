@@ -1,6 +1,6 @@
-@font-face{font-family:'GiNOVA Universal';src:url('fonts/ginova-universal.woff') format('woff');font-weight:400;font-display:swap}
-@font-face{font-family:'Noto Sans Arabic';src:url('fonts/ginova-arabic.woff') format('woff');font-weight:400;font-display:swap}
-@font-face{font-family:'Noto Sans SC';src:url('fonts/ginova-chinese.woff') format('woff');font-weight:400;font-display:swap}
+@font-face{font-family:'GiNOVA Universal';src:url('fonts/ginova-universal.woff') format('woff');unicode-range:U+0370-03FF,U+0400-052F,U+1C80-1C8F,U+2DE0-2DFF,U+A640-A69F;font-weight:400;font-display:swap}
+@font-face{font-family:'Noto Sans Arabic';src:url('fonts/ginova-arabic.woff') format('woff');unicode-range:U+0600-06FF,U+0750-077F,U+08A0-08FF,U+FB50-FDFF,U+FE70-FEFF;font-weight:400;font-display:swap}
+@font-face{font-family:'Noto Sans SC';src:url('fonts/ginova-chinese.woff') format('woff');unicode-range:U+2E80-2FDF,U+3000-30FF,U+3400-4DBF,U+4E00-9FFF,U+F900-FAFF,U+FE30-FE4F,U+FF00-FF0A,U+FF0C-FFEF;font-weight:400;font-display:swap}
 html:lang(ar) body,html:lang(ar) button,html:lang(ar) input,html:lang(ar) select,html:lang(ar) textarea,html:lang(ar) h1,html:lang(ar) h2,html:lang(ar) h3{text-transform:none}
 html:lang(zh) body,html:lang(zh) button,html:lang(zh) input,html:lang(zh) select,html:lang(zh) textarea,html:lang(zh) h1,html:lang(zh) h2,html:lang(zh) h3{text-transform:none;word-break:normal;line-break:strict}html[dir=rtl] .navlinks,html[dir=rtl] .hero,html[dir=rtl] .proposal-form,html[dir=rtl] .scope-row{text-align:start}
 a[href^='mailto:'],.sku,.item-index,.n,.album-track-time{unicode-bidi:isolate;direction:ltr}
